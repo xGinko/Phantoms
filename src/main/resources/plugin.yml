@@ -1,0 +1,30 @@
+name: Phantoms
+version: '${project.version}'
+main: me.xginko.phantoms.Phantoms
+api-version: 1.19
+prefix: Phantoms
+authors: [xGinko]
+description: Customizable Phantoms
+website: github.com/xGinko
+commands:
+  phantoms:
+    permission: phantoms.cmd.*
+    description: Admin commands
+    usage: /phantoms [ reload, version, spawn ]
+permissions:
+  phantoms.cmd.reload:
+    description: Permission reload the plugin
+  phantoms.cmd.version:
+    description: Permission to show the plugin version
+  phantoms.cmd.spawn:
+    description: Permission to spawn phantoms via command
+  phantoms.cmd.remove:
+    description: Permission to remove all phantoms via command
+  phantoms.cmd.*:
+    description: Command permissions
+    default: op
+    children:
+      phantoms.cmd.reload: true
+      phantoms.cmd.version: true
+      phantoms.cmd.spawn: true
+      phantoms.cmd.remove: true
